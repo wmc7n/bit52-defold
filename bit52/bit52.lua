@@ -62,14 +62,6 @@ M.to_ary = function(num, bits)
 	return t
 end
 
-M.to_num = function(bits)
-	local t = 0
-	for i,v in ipairs(bits) do
-		t = t + v*math.pow(2, #bits-i)
-	end
-	return t
-end
-
 M.reverse = function(num, bits)
 	local ary = M.to_bits(num, bits)
 	local tmp = {}
