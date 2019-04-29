@@ -44,16 +44,6 @@ M.rs52 = function(num, bits)
 	return math.floor(num / math.pow(2, bits))
 end
 
-M.to_bits = function(num,bits)
-	bits = bits or math.max(1, select(2, math.frexp(num)))
-	local t = {}
-	for b = bits, 1, -1 do
-		t[b] = math.fmod(num, 2)
-		num = math.floor((num - t[b]) / 2)
-	end
-	return t
-end
-
 M.to_num = function(bits)
 	local t = 0
 	for i,v in ipairs(bits) do
