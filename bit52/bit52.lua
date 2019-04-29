@@ -63,7 +63,7 @@ M.to_ary = function(num, bits)
 end
 
 M.reverse = function(num, bits)
-	local ary = M.to_bits(num, bits)
+	local ary = M.to_ary(num, bits)
 	local tmp = {}
 	for i=1,#ary do
 		table.insert(tmp, ary[#ary-i+1])
