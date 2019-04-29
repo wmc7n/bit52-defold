@@ -36,6 +36,16 @@ M.xor52 = function(v1, v2)
 	return h*hi + l
 end
 
+M.not52 = function(v1)
+	local hi = 0x80000000
+	local low = 0x7fffffff
+	local hi1 = math.floor(v1 / hi)
+	local low1 = bit.band(v1, low)
+	local h = bit.bnot(hi1)
+	local l = bit.bnot(low1)
+	return h*hi + l
+end
+
 M.ls52 = function(num, bits)
 	return num * math.pow(2, bits)
 end
