@@ -45,7 +45,7 @@ M.rs52 = function(num, bits)
 end
 
 M.not52 = function(v1)
-	return bit.bnot(bit.band(v1, 0xffffffff)) + M.ls52(bit.band(bit.bnot(M.rs52(v1, 32)), 0x3FFF), 32)
+	return M.or52(bit.band(bit.bnot(v1), 0x7fffffff), M.ls52(bit.band(bit.bnot(M.rs52(v1, 31)), 0x7fff), 31))
 end
 
 M.to_num = function(bits)
